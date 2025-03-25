@@ -1,8 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Accordion } from "@/components/ui/accordion";
-import { AccordionDemo } from "./AccordionDemo";
-import { ConfettiButton } from "@/components/magicui/confetti";
 export default function Navbar() {
   return (
     <>
@@ -66,7 +62,6 @@ export default function Navbar() {
             <span
               role="img"
               aria-label="shopping-cart"
-              //   tabindex="-1"
               className="anticon anticon-shopping-cart cursor-pointer text-[25px]"
             >
               <svg
