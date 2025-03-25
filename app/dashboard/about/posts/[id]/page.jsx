@@ -5,22 +5,17 @@ import Image from "next/image";
 const token = "64bebc1e2c6d3f056a8c85b7";
 
 const getData = async () => {
-  try {
-    const res = await axios.get(
-      `${process.env.NEXT_API}/flower/category/house-plants?access_token=${token}`
-    );
-    return res.data;
-  } catch (error) {
-    console.error("Ma'lumotni olishda xatolik:", error);
-    throw new Error("Ma'lumotni olishda xatolik!");
-  }
+  const res = await axios.get(
+    `${process.env.NEXT_API}/flower/category/house-plants?access_token=${token}`
+  );
+  return res.data;
 };
 
 const Page = async () => {
-  const data = await getData();
+  const data =await getData();
   console.log(data);
 
-  const images = data?.detailed_images || []; 
+  const images = data?.detailed_images || [];
   console.log("Data object:", data);
   console.log("Detailed Images:", data?.detailed_images);
 
@@ -41,8 +36,6 @@ const Page = async () => {
                         alt={`Image ${index}`}
                         layout="fill"
                         objectFit="cover"
-                        // height={50}
-                        // width={50}
                       />
                     </div>
                   ))
@@ -50,36 +43,6 @@ const Page = async () => {
                   <p>Rasmlar yo‘q</p>
                 )}
               </div>
-              {/* <div className="w-[100px] h-[100px] bg-[#e5e5e5] cursor-pointer border-2 hover:border-[#46A358] transition-colors">
-                <Image
-                  src="/image.png"
-                  alt="gul"
-                  width={100}
-                  height={50}
-                  className="ant-image-img w-full h-full"
-                  priority
-                />
-              </div>
-              <div className="w-[100px] h-[100px] bg-[#e5e5e5] cursor-pointer border-2 hover:border-[#46A358] transition-colors">
-                <Image
-                  src="/gul.png"
-                  alt="gul"
-                  width={100}
-                  height={50}
-                  className="ant-image-img w-full h-full"
-                  priority
-                />
-              </div>
-              <div className="w-[100px] h-[100px] bg-[#e5e5e5] cursor-pointer border-2 hover:border-[#46A358] transition-colors">
-                <Image
-                  src="/image.png"
-                  alt="gul"
-                  width={100}
-                  height={50}
-                  className="ant-image-img w-full h-full"
-                  priority
-                />
-              </div> */}
             </div>
             <div className="cursor-pointer flex justify-center items-center w-full">
               <div className="ant-image css-k7429z">

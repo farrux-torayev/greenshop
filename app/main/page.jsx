@@ -1,5 +1,4 @@
 import React from "react";
-
 import CategoriesMain from "./CategoriesMain/page";
 import Card from "./Card";
 
