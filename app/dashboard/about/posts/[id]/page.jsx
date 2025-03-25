@@ -1,13 +1,28 @@
 import Footer from "@/app/components/Footer";
-import Hero from "@/app/components/Hero";
 import Navbar from "@/app/components/Nabvar";
+import axios from "axios";
 import Image from "next/image";
-export default async function page({ params }) {
-  console.log(params);
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`
-  );
-  const post = await res.json();
+const token = "64bebc1e2c6d3f056a8c85b7";
+
+const getData = async () => {
+  try {
+    const res = await axios.get(
+      `${process.env.NEXT_API}/flower/category/house-plants?access_token=${token}`
+    );
+    return res.data;
+  } catch (error) {
+    console.error("Ma'lumotni olishda xatolik:", error);
+    throw new Error("Ma'lumotni olishda xatolik!");
+  }
+};
+
+const Page = async () => {
+  const data = await getData();
+  console.log(data);
+
+  const images = data?.detailed_images || []; 
+  console.log("Data object:", data);
+  console.log("Detailed Images:", data?.detailed_images);
 
   return (
     <>
@@ -15,18 +30,27 @@ export default async function page({ params }) {
         <Navbar />
         <div className="flex w-full gap-12 max-lg:flex-col">
           <div className="flex-1 flex gap-6 max-lg:flex-col">
-            <div className="flex flex-col justify-between max-lg:order-2 max-lg:flex-row max-lg:gap-3 max-lg:overflow-x-scroll ">
-              <div className="w-[100px] h-[100px] bg-[#e5e5e5] cursor-pointer border-2 hover:border-[#46A358] transition-colors">
-                <Image
-                  src="/image copy.png"
-                  alt="Logo"
-                  width={100}
-                  height={50}
-                  className="ant-image-img w-full h-full"
-                  priority
-                />
+            <div className="flex flex-col  justify-between max-lg:order-2 max-lg:flex-row max-lg:gap-3 max-lg:overflow-x-scroll ">
+              <div className="w-[100px] h-[500px] flex flex-col gap-[30px]  cursor-pointer  hover:border-[#46A358] transition-colors">
+                {Array.isArray(data?.data?.[0]?.detailed_images) &&
+                data.data[0].detailed_images.length > 0 ? (
+                  data.data[0].detailed_images.map((url, index) => (
+                    <div key={index} className="relative  w-[100px] h-[100px]">
+                      <Image
+                        src={url}
+                        alt={`Image ${index}`}
+                        layout="fill"
+                        objectFit="cover"
+                        // height={50}
+                        // width={50}
+                      />
+                    </div>
+                  ))
+                ) : (
+                  <p>Rasmlar yo‘q</p>
+                )}
               </div>
-              <div className="w-[100px] h-[100px] bg-[#e5e5e5] cursor-pointer border-2 hover:border-[#46A358] transition-colors">
+              {/* <div className="w-[100px] h-[100px] bg-[#e5e5e5] cursor-pointer border-2 hover:border-[#46A358] transition-colors">
                 <Image
                   src="/image.png"
                   alt="gul"
@@ -55,7 +79,7 @@ export default async function page({ params }) {
                   className="ant-image-img w-full h-full"
                   priority
                 />
-              </div>
+              </div> */}
             </div>
             <div className="cursor-pointer flex justify-center items-center w-full">
               <div className="ant-image css-k7429z">
@@ -72,7 +96,7 @@ export default async function page({ params }) {
               <div className="flex items-center gap-4">
                 <img
                   className="rounded-full w-[50px] h-[50px] cursor-pointer"
-                  src="https://alqadir.edu.pk/wp-content/uploads/2022/09/BS-Islamic-Studies-2022.jpg"
+                  src=""
                   alt=""
                 />
                 <div>
@@ -193,15 +217,17 @@ export default async function page({ params }) {
         </div>
         <div className=" p-5">
           <h1>
-            <span className="text-[18px] font-[900]">Title</span>-{post?.title}
+            <span className="text-[18px] font-[900]">Title</span>-{data?.title}
           </h1>
           <h2>
-            <span className="text-[18px] font-[900]">Body</span>-{post?.body}
+            <span className="text-[18px] font-[900]">Body</span>-{data?.body}
           </h2>
         </div>
-        <Hero />
+
+        <footertop />
         <Footer />
       </div>
     </>
   );
-}
+};
+export default Page;

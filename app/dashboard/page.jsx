@@ -1,17 +1,22 @@
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+const token = "64bebc1e2c6d3f056a8c85b7";
 
-export default async function Dashboard() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await res.json();
+const Dashboard = async () => {
+  const res = await axios.get(
+    `${process.env.NEXT_API}/flower/category/house-plants?access_token=${token}`
+  );
+  const data = await res.data.data;
+  console.log(data);
 
   return (
     <>
       <div className="grid grid-cols-3 gap-4">
-        {posts?.map((post, index) => {
+        {data?.map(({ title, count }, index) => {
           return (
             <div key={index}>
-              <Link href={`/dashboard/about/posts/${post?.id}`}>
+              <Link href={`/dashboard/about/posts/${data?._id}`}>
                 <div className="mt-[30px] h-[400px]  max-sm:grid-cols-2">
                   <div className="">
                     <div className="group h-[300px] bg-[#f5f5f5] flex justify-center items-center relative">
@@ -108,10 +113,10 @@ export default async function Dashboard() {
                       </div>
                     </div>
                     <h3 className="font-normal h-[50px] cursor-pointer mt-[12px]">
-                      {post?.title}
+                      {data?.title}
                     </h3>
                     <p className="text-[#46A358] font-bold">
-                      $12
+                      {data?.count}
                       <span className="font-thin text-[#A5A5A5] ml-[5px] line-through">
                         $12
                       </span>
@@ -125,4 +130,5 @@ export default async function Dashboard() {
       </div>
     </>
   );
-}
+};
+export default Dashboard;

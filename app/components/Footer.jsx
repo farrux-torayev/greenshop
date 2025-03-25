@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="flex justify-between bg-[#46A3581A] p-[23px] max-lg:flex-col max-lg:items-center gap-2.5">
         <div>
           <Image
-            src="/logo.svg"
+            src="/icons/logo.svg"
             alt="gul"
             width={100}
             height={100}
@@ -15,7 +15,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-2.5 items-center">
           <Image
-            src="/location.svg"
+            src="/icons/location.svg"
             alt="location"
             width={100}
             height={100}
@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-2.5 items-center">
           <Image
-            src="/email.svg"
+            src="/icons/email.svg"
             alt="email"
             width={100}
             height={100}
@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-2.5 items-center">
           <Image
-            src="/call.svg"
+            src="/icons/call.svg"
             alt="call"
             width={100}
             height={100}
@@ -72,7 +72,7 @@ export default function Footer() {
           <div className="flex gap-3 mt-[20px] ">
             <div className="border border-[#46A35833] w-[30px] h-[30px] flex justify-center items-center cursor-pointer">
               <Image
-                src="/facebook.svg"
+                src="/icons/facebook.svg"
                 alt="facebook"
                 width={100}
                 height={100}
@@ -83,7 +83,7 @@ export default function Footer() {
             </div>
             <div className="border border-[#46A35833] w-[30px] h-[30px] flex justify-center items-center cursor-pointer">
               <Image
-                src="/instagram.svg"
+                src="/icons/instagram.svg"
                 alt="instagram"
                 width={100}
                 height={100}
@@ -94,7 +94,7 @@ export default function Footer() {
             </div>
             <div className="border border-[#46A35833] w-[30px] h-[30px] flex justify-center items-center cursor-pointer">
               <Image
-                src="/twitter.svg"
+                src="/icons/twitter.svg"
                 alt="twitter"
                 width={100}
                 height={100}
@@ -105,7 +105,7 @@ export default function Footer() {
             </div>
             <div className="border border-[#46A35833] w-[30px] h-[30px] flex justify-center items-center cursor-pointer">
               <Image
-                src="/linkedin.svg"
+                src="/icons/linkedin.svg"
                 alt="linkedin"
                 width={100}
                 height={100}
@@ -116,7 +116,7 @@ export default function Footer() {
             </div>
             <div className="border border-[#46A35833] w-[30px] h-[30px] flex justify-center items-center cursor-pointer">
               <Image
-                src="/union.svg"
+                src="/icons/union.svg"
                 alt="union"
                 width={100}
                 height={100}
@@ -129,7 +129,7 @@ export default function Footer() {
           <h3 className="font-bold mt-[33px]">We accept</h3>
           <div className="flex gap-3 mt-[20px]">
             <Image
-              src="/paypal.svg"
+              src="/icons/paypal.svg"
               alt="paypal"
               width={100}
               height={100}
@@ -137,7 +137,7 @@ export default function Footer() {
               className="w-[30px] h-[30px] cursor-pointer"
             />
             <Image
-              src="/mastercard (1).svg"
+              src="/icons/mastercard (1).svg"
               alt="mastercard"
               width={100}
               height={100}
@@ -145,7 +145,7 @@ export default function Footer() {
               className="w-[30px] h-[30px] cursor-pointer"
             />
             <Image
-              src="/visa (1).svg"
+              src="/icons/visa (1).svg"
               alt="visa"
               width={100}
               height={100}
@@ -153,7 +153,7 @@ export default function Footer() {
               className="w-[30px] h-[30px] cursor-pointer"
             />
             <Image
-              src="/amex.svg"
+              src="/icons/amex.svg"
               alt="amex"
               width={100}
               height={100}

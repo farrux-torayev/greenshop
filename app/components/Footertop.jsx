@@ -1,10 +1,10 @@
 import Image from "next/image";
-export default function Hero() {
+export default function Footertop() {
   return (
     <div className="flex">
       <div className="border-r m-[23px] pr-[23px] border-[#46A358] w-[200px] h-[210px] ">
         <Image
-          src="/footer_flower_1.svg"
+          src="/icons/footer_flower_1.svg"
           alt="gul"
           width={100}
           height={100}
@@ -19,7 +19,7 @@ export default function Hero() {
       </div>
       <div className="border-r  m-[23px] pr-[23px] border-[#46A358] w-[200px] h-[210px] ">
         <Image
-          src="/footer_flower_2.svg"
+          src="/icons/footer_flower_2.svg"
           alt="gul"
           width={100}
           height={100}
@@ -34,7 +34,7 @@ export default function Hero() {
       </div>
       <div className=" w-[200px]  m-[23px] pr-[23px] h-[210px] ">
         <Image
-          src="/footer_flower_1.svg"
+          src="/icons/footer_flower_1.svg"
           alt="gul"
           width={100}
           height={100}

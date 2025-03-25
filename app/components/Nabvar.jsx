@@ -1,11 +1,15 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Accordion } from "@/components/ui/accordion";
+import { AccordionDemo } from "./AccordionDemo";
+import { ConfettiButton } from "@/components/magicui/confetti";
 export default function Navbar() {
   return (
     <>
       <div className="w-[1165px] h-[80px] m-auto flex items-center justify-between  p-8  align-center ">
         <div>
           <Image
-            src="/logo.svg"
+            src="/icons/logo.svg"
             alt="Logo"
             width={100}
             height={50}
@@ -15,9 +19,11 @@ export default function Navbar() {
         </div>
         <div className="flex justify-center w-[463px] gap-8">
           <h3 className="cursor-pointer">
-            <a href="/">Home</a></h3>
+            <a href="/">Home</a>
+          </h3>
           <h3 className="cursor-pointer">
-            <a href="/blog">Blog</a></h3>
+            <a href="/blog">Blog</a>
+          </h3>
         </div>
         <div className="justify-end flex gap-8">
           <span
