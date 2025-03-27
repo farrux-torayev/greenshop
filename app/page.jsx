@@ -1,8 +1,8 @@
+import Blog from "./components/Blog";
 import Footer from "./components/Footer";
 import Footertop from "./components/Footertop";
 import Navbar from "./components/Nabvar";
 import SwiperComponent from "./components/Swiper";
-import Dashboard from "./dashboard/page";
 import Main from "./main/page";
 
 export default function Home() {
@@ -11,9 +11,9 @@ export default function Home() {
       <Navbar />
       <SwiperComponent />
       <Main />
-      <Dashboard />
       <Footertop />
       <Footer />
+      <Blog/>
     </div>
   );
 }

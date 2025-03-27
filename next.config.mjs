@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  pageExtensions: ["jsx", "js"],
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
+};
 
 export default nextConfig;

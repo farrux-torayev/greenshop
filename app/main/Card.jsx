@@ -86,7 +86,7 @@ const Card = async () => {
           {data?.map(({ title, price, _id, main_image }, index) => {
             return (
               <div key={index}>
-                <Link href={`/dashboard/about/posts/${_id}`}>
+                <Link href={`/Card/cards/${_id}`}>
                   <div className="mt-[30px] h-[400px]  max-sm:grid-cols-2">
                     <div className="">
                       <div className="group h-[300px] bg-[#f5f5f5] flex justify-center items-center relative">
