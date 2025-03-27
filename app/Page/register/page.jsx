@@ -1,10 +1,7 @@
-"use client"; // Next.js-da Client Component ekanligini belgilash
-
+"use client";
 import { useState } from "react";
 import axios from "axios";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
-import Link from "next/link";
-
 export default function RegisterForm() {
   const [isPassword, setIsPassword] = useState(true);
   const [formData, setFormData] = useState({
@@ -14,14 +11,12 @@ export default function RegisterForm() {
     password: "",
     confirmed_password: "",
   });
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
-
   const handleRegister = async () => {
     if (
       !formData.name ||
@@ -32,7 +27,6 @@ export default function RegisterForm() {
       console.error("Xatolik: Barcha maydonlarni to‘ldiring!");
       return;
     }
-
     try {
       const token = "64bebc1e2c6d3f056a8c85b7";
       const apiUrl = "https://green-shop-backend.onrender.com/api";
@@ -40,7 +34,6 @@ export default function RegisterForm() {
         `${apiUrl}/user/sign-up?access_token=${token}`,
         formData
       );
-      <Link href={"/"}></Link>;
       console.log("Ro‘yxatdan o‘tish muvaffaqiyatli:", res.data);
     } catch (error) {
       console.error(

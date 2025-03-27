@@ -1,9 +1,4 @@
-import { useRouter } from "next/router";
-
 const CardDetail = ({ data }) => {
-  const router = useRouter();
-  const { id } = router.query;
-
   return (
     <div>
       {data?.map(({ title, count }, index) => {
@@ -17,8 +12,6 @@ const CardDetail = ({ data }) => {
           </div>
         );
       })}
-      <h1>Card ID: {id}</h1>
-      <p>Bu yerda {id} kartochkasi haqida ma'lumot bo‘ladi.</p>
     </div>
   );
 };
